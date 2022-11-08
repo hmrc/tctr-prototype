@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+		
+	<span class="govuk-caption-m" id="section-x-of-y">Section 1 of 5</span>
+
+      <h1 class="govuk-heading-l">About you</h1>
+
+      <h1 class="govuk-body-m">These should be the details of the person completing this.<p>We'll only use your contact details to update you about your enquiry.</h1>
+		  
+		  <p class="govuk-inset-text">Due to data security, we are unable to pre-populate this form.</p>
+
+      <form class="form" action="/current-occupier-6015" method="post">
+
+          {{ govukInput({
+            label: {
+              text: "Full name",
+              classes: "govuk-label--s"
+            },
+            classes: "govuk-input--width-20",
+            id: "full-name",
+            name: "full-name"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Email address",
+              classes: "govuk-label--s"
+            },
+            classes: "govuk-input--width-20",
+            id: "email-address",
+            name: "email-address"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Telephone number",
+              classes: "govuk-label--s"
+            },
+            classes: "govuk-input--width-20",
+            id: "phone-number",
+            name: "phone-number"
+          }) }}
+
+          {{ govukRadios({
+            idPrefix: "representative",
+            name: "representative",
+            fieldset: {
+              legend: {
+                text: "What is your relationship to the property?",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "If you're renting or leasing the property, even as a charity or non-profit organisation, you're considered the occupier. If you are both the owner and the occupier, select 'Owner or trustee for owner'."
+            },
+            items: [
+              {
+                value: "Occupier or trustee for occupier",
+                text: "Occupier or trustee for occupier"
+              },
+              {
+                value: "Owner or trustee for owner",
+                text: "Owner or trustee for owner"
+              },
+              {
+                value: "Occupier's agent",
+                text: "Occupier's agent"
+              },
+              {
+                value: "Owner's agent",
+                text: "Owner's agent"
+              }
+            ]
+          }) }}
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

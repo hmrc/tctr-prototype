@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">About the property</h1>
+
+      <form class="form" action="/name-address-landlord-6020" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "What is the name of the current occupier?",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "This should be the trading name and site name of the property"
+          },
+          classes: "govuk-input--width-20",
+          id: "full-name",
+          name: "full-name"
+        }) }}
+
+        {{ govukDateInput({
+            id: "first-occupy-6015",
+            namePrefix: "first-occupy-6015",
+            fieldset: {
+              legend: {
+                text: "When did you first occupy the property?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            }
+          }) }}
+
+          {{ govukInput({
+            name: "property-currently-used-6020",
+            id: "property-currently-used-6020",
+            label: {
+              text: "How is the property currently used?",
+              classes: "govuk-label--m",
+              isPageHeading: true
+            },
+            hint: {
+              text: "For example, petrol station, petrol station with living accomodation etc"
+            }
+          }) }}
+
+          {{ govukCheckboxes({
+            idPrefix: "waste",
+            name: "waste",
+            fieldset: {
+              legend: {
+                text: "Indicate your  type of tenure",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "Select all that apply."
+            },
+            items: [
+              {
+                value: "Freehold",
+                text: "Freehold"
+              },
+              {
+                value: "Leasehold",
+                text: "Leasehold"
+              },
+              {
+                value: "License",
+                text: "License"
+              },
+              {
+                value: "Tenancy",
+                text: "Tenancy"
+              },
+              {
+                value: "Long leasehold at ground rent",
+                text: "Long leasehold at ground rent"
+              }
+            ]
+          }) }}
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

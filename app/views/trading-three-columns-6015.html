@@ -1,0 +1,253 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-m">About your trading history</span>
+      <br>
+
+      <h1 class="govuk-heading-l">Turnover</h1>
+
+      <h1 class="govuk-body-m">Please provide us with details of your turnover. If the accounts do not relate to a whole year, or if you are not trading continuously, state the relevant number of weeks.</h1>
+
+        <style>
+          .row {
+            display: flex;
+          }
+
+          .form-grp {
+            margin: 10px
+          }
+          .form-grp label {
+            display:block;
+          }
+		  
+		  .row {margin:20px 0;}
+		  
+		  div span.govuk-input__wrapper {display:inline-block;}
+		  
+		  .govuk-input__prefix, .govuk-input__suffix {
+		    font-size: 19px;
+		    font-size: 1.1875rem;
+		    line-height: 1.38;
+	
+		  }
+		  
+		  .govuk-input__suffix {
+			margin-right:30px;
+		  }
+		  
+		  .govuk-input__prefix.secondCol {
+			margin-left:70px;
+		  }
+		  
+		  
+		  
+		  p {font-weight:bold;}
+		  
+		  .subtitle {font-weight:normal;}
+		  
+		  
+		 
+		  
+          </style>
+		  
+		 
+
+        <form class="form" action="/explain-business-cost-or-gross-6015" method="post">
+			
+			<div class="row weeks">
+				
+				<p style="margin-right:180px">Financial year end</p>
+				
+				<span class="govuk-input__wrapper">
+					<p style="margin-right:100px">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2019</p>
+					
+				</span>
+				
+				<span class="govuk-input__wrapper">
+					<p style="margin-right:100px">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2020</p>
+				
+				</span>
+				
+				<span class="govuk-input__wrapper">
+					<p style="margin-right:0px">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2021</p>
+				
+				</span>
+				
+   			</div>
+			
+				
+			<div class="row weeks">
+				
+			<p style="margin-right:200px">Trading Period</p>
+				
+				<span class="govuk-input__wrapper" style="margin-right:50px">
+			
+					<input class="govuk-input govuk-input--width-3" type="text"><label class="govuk-input__suffix" aria-hidden="true">weeks</label>
+				</span>
+				
+				<span class="govuk-input__wrapper" style="margin-right:50px">
+				
+					<input class="govuk-input govuk-input--width-3" type="text"><label class="govuk-input__suffix" aria-hidden="true">weeks</label>
+				</span>
+				
+				<span class="govuk-input__wrapper">
+				
+					<input class="govuk-input govuk-input--width-3" type="text"><label class="govuk-input__suffix" aria-hidden="true">weeks</label>
+				</span>
+				
+   			</div>
+			
+			<div class="row">
+				
+				<p style="margin-right:180px">Accommodation<br/><span class="subtitle">(exc VAT)</p>
+				
+				<span class="govuk-input__wrapper">
+					<label class="govuk-input__prefix" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+				</span>
+				
+				<span class="govuk-input__wrapper">
+					<label class="govuk-input__prefix secondCol" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+				</span>
+				
+				<span class="govuk-input__wrapper">
+					<label class="govuk-input__prefix secondCol" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+				</span>
+				
+			
+			
+   			</div>
+			
+			
+			
+			<div class="row">
+				
+				<p style="margin-right:108px">Average Occupancy Rate</p>
+				
+				<span class="govuk-input__wrapper">
+					<input class="govuk-input govuk-input--width-3" type="text"><label class="govuk-input__suffix" aria-hidden="true" style="margin-right:104px">%</label>
+				</span>
+				
+				<span class="govuk-input__wrapper">
+					<input class="govuk-input govuk-input--width-3" type="text"><label class="govuk-input__suffix" aria-hidden="true" style="margin-right:104px">%</label>
+				</span>
+				
+				<span class="govuk-input__wrapper">
+					<input class="govuk-input govuk-input--width-3" type="text"><label class="govuk-input__suffix" aria-hidden="true">%</label>
+				</span>
+				
+   			</div>
+			
+			<div class="row">
+				
+				<p style="margin-right:244px">Food<br/><span class="subtitle">(exc VAT)</span></p>
+				
+			<span class="govuk-input__wrapper">
+				<label class="govuk-input__prefix" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+			</span>
+			
+			<span class="govuk-input__wrapper">
+				<label class="govuk-input__prefix secondCol" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+			</span>
+			
+			<span class="govuk-input__wrapper">
+				<label class="govuk-input__prefix secondCol" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+			</span>
+				
+			
+			
+   			</div>
+			
+			<div class="row">
+				
+				<p style="margin-right:170px">Alcohol (exc VAT)</p>
+				
+				<span class="govuk-input__wrapper">
+					<label class="govuk-input__prefix" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+				</span>
+				
+				<span class="govuk-input__wrapper">
+					<label class="govuk-input__prefix secondCol" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+				</span>
+				
+				<span class="govuk-input__wrapper">
+					<label class="govuk-input__prefix secondCol" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+				</span>
+				
+			
+			
+   			</div>
+			
+			<div class="row">
+				
+				<p style="margin-right:43px">Other (exc VAT)<br/><span class="subtitle">Including hire of function rooms,<br>conference rooms and telephones</span></p>
+				
+				<span class="govuk-input__wrapper">
+					<label class="govuk-input__prefix" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+				</span>
+				
+				<span class="govuk-input__wrapper">
+					<label class="govuk-input__prefix secondCol" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+				</span>
+				
+				<span class="govuk-input__wrapper">
+					<label class="govuk-input__prefix secondCol" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+				</span>
+				
+			
+			
+   			</div>
+			
+			<div class="row">
+				
+				<p style="margin-right:155px">Total sales revenue<br/>(exc VAT)</p>
+				
+				<span class="govuk-input__wrapper">
+					<label class="govuk-input__prefix" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+				</span>
+				
+				<span class="govuk-input__wrapper">
+					<label class="govuk-input__prefix secondCol" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+				</span>
+				
+				<span class="govuk-input__wrapper">
+					<label class="govuk-input__prefix secondCol" aria-hidden="true">£</label><input class="govuk-input govuk-input--width-5" type="text">
+				</span>
+				
+			
+			
+   			</div>
+			
+			
+			
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-m">About your trading history</span>
+	  <h1 class="govuk-heading-l">Static caravans</h1>
+
+      <form class="form" action="/holiday-other" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "What is the current annual static pitch fee charged?",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text: "Exclusive of VAT"
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-5",
+          id: "full-name",
+          name: "full-name"
+        }) }}
+		
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "State",
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+		
+        
+
+        {% set otherHtml %}
+        {{ govukInput({
+          label: {
+            text: "Charge made",
+            classes: "govuk-body--s",
+            isPageHeading: true
+          },
+          id: "other-property-name",
+          name: "other-property-name",
+		  classes: "govuk-input--width-5",
+          prefix: {
+            text: "£"
+          }
+        }) }}
+        {% endset -%}
+
+       {{ govukCheckboxes({
+         idPrefix: "waste",
+         name: "waste",
+         fieldset: {
+           legend: {
+             text: "What services etc are included in this pitch fee, and what is the charge made?",
+             isPageHeading: true,
+             classes: "govuk-fieldset__legend--m"
+           }
+         },
+         hint: {
+           text: "Select all that apply"
+         },
+         items: [
+           {
+             value: "Fleet caravan park",
+             text: "Rates",
+             conditional: {
+               html: otherHtml
+             }
+           },
+           {
+             value: "Private caravan park",
+             text: "Water/Drainage",
+             conditional: {
+               html: otherHtml
+             }
+           },
+           {
+             value: "Residential park",
+             text: "Gas",
+             conditional: {
+               html: otherHtml
+             }
+           },
+           {
+             value: "Chalet park",
+             text: "Electricity",
+             conditional: {
+               html: otherHtml
+             }
+           },
+           {
+             value: "otherUse",
+             text: "Other",
+             conditional: {
+               html: otherHtml
+             }
+           }
+		   
+         ]
+       }) }}
+		
+
+        <!--{{ govukTextarea({
+          name: "enforcement-action",
+          id: "enforcement-action",
+          label: {
+            text: "If enforcement action has been taken, please give details of any suspensions, closure orders or temporary restrictions",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text: "Leave blank if no enforcement action has been taken"
+          }
+        }) }}-->
+
+
+
+        <!--{{ govukTextarea({
+          name: "premises-licence",
+          id: "premises-licence",
+          label: {
+            text: "Give details if your Premises Licence has conditions restricting the use of all or parts of the property",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text: "Leave blank if no enforcement action has been taken"
+          }
+        }) }}-->
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

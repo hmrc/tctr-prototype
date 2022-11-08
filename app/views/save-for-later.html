@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+		
+	  <h1 class="govuk-heading-l">Create a password to retrieve the information you’ve already added </h1>
+	       
+
+	      
+	                    
+	               
+        
+        
+<p class="govuk-body">Your draft will be saved but will not be sent now. You can continue completing the form when you return.</p>
+
+	       <form action="/save-for-later-password.html">
+
+        
+	   <div class="govuk-form-group">
+  
+
+	     <div id="password-hint" class="govuk-hint">
+         <p>Your password must:</p>
+         <ul class="list-bullet">
+           <li>contain at least 8 characters</li>
+           <li>have at least one number (0-9)</li>
+           <li>have at least one letter (a-z)</li>
+           <li>not contain any common words like ‘password’, for example</li>
+         </ul>
+	   </div>
+
+  
+  <label class="govuk-label" for="password">
+    Password
+  </label>
+	         <input class="govuk-input govuk-input--width-20" 
+	       id="password" name="password" type="password"   aria-describedby="password-hint">
+  
+
+	   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+	   <div class="govuk-form-group">
+  
+    
+        
+	         <label class="govuk-label" for="confirmPassword">
+	           Confirm password
+	         </label>
+    
+      
+  
+
+
+  
+  
+  
+	         <input class="govuk-input govuk-input--width-20" type="password" 
+	       id="confirmPassword" name="confirmPassword" type="text">
+  
+
+	   </div>
+
+
+
+
+
+
+   <script>
+	   
+	   let start = new Date();
+	   let end = new Date(start);
+	   end.setMonth(end.getMonth() + 1);
+	   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+	   
+	   let addMon = new Date(end).toLocaleDateString(undefined, options);
+
+	   //console.log(start, end, addMon)
+	   </script>
+ 
+
+
+
+
+
+
+
+
+
+	           <div class="govuk-warning-text">
+	     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+	     <strong class="govuk-warning-text__text">
+	       <span class="govuk-warning-text__assistive"></span>
+	       Choose a memorable password. You will not be able to retrieve it if you forget it.
+	     </strong>
+	   </div>
+	   
+	     <div id="password-hint" class="govuk-hint">
+         <p>When you return to complete the form you'll need:</p>
+         <ul class="list-bullet">
+           <li>your password</li>
+           <li>the reference number shown on the letter you recieved</li>
+           <li>the postcode shown on the letter you recieved</li>
+          
+         </ul>
+	   </div>
+
+
+
+
+	           <p class="govuk-body">
+	               Any unsent information will be removed on <script type="text/javascript">
+				           document.write(addMon)
+				         </script>
+	           </p>
+
+	           <p class="govuk-body">
+	               <input type="submit" class="govuk-button" value="Save and continue">
+	           </p>
+
+	       </form>
+
+    </div>
+  </div>
+
+{% endblock %}

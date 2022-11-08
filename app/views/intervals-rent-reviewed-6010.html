@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-m" id="section-x-of-y">About your lease or agreement</span>
+      <form class="form" action="/former-lease-agreement" method="post">
+
+        <h1 class="govuk-heading-l">At what intervals is the rent reviewed under the terms of the lease or agreement?</h1>
+        <h2 class="govuk-body-m">Do not include any changes to your rent linked to indexes such as the RPI, or your sales. For example, rent is reviewed annually, every two years, every three years.</h2>
+
+        {{ govukTextarea({
+          name: "interval-rent-review-6010",
+          id: "interval-rent-review-6010",
+          label: {
+            text: "",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          }
+         
+        }) }}
+
+        {{ govukDateInput({
+          id: "rent-review-due-6015",
+          namePrefix: "rent-review-due-6015",
+          fieldset: {
+            legend: {
+              text: "When is the next rent review due?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "for example, 27 9 2017"
+          }
+        }) }}
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

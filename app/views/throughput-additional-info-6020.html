@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Throughput and turnover </h1>
+
+      <form class="form" action="/additional-lettings-info" method="post">
+
+        <h1 class="govuk-heading-m">Additional  information</h1>
+
+        {{ govukInput({
+            label: {
+              text: "What were the opening hours ()",
+              classes: "govuk-label--s",
+              isPageHeading: true
+            },
+            id: "event-name",
+            name: "event-name"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Correspondence address of the tenant",
+              classes: "govuk-label--s",
+              isPageHeading: true
+            },
+            hint: {
+              text: "Postcode"
+            },
+            classes: "govuk-!-width-one-third",
+            id: "event-name",
+            name: "event-name"
+          }) }}
+
+          {{ govukRadios({
+              classes: "govuk-radios--inline",
+              idPrefix: "changed-name",
+              name: "changed-name",
+              fieldset: {
+                legend: {
+                  text: "Do you receive rent from letting to this tenant?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              hint: {
+                text: "Including advertising rights, stations or hoardings"
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes"
+                },
+                {
+                  value: "no",
+                  text: "No"
+                }
+              ]
+            }) }}
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+		
+    <span class="govuk-caption-m" id="section-x-of-y">About your lease or agreement</span>
+
+      <form class="form" action="/method-used-fix-rent" method="post">
+
+        {{ govukRadios({
+          idPrefix: "was-current-rent-6015",
+          name: "was-current-rent-6015",
+          fieldset: {
+            legend: {
+              text: "How was the current rent fixed?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "at the beginning of a new lease or agreement",
+              text: "At the beginning of a new lease or agreement"
+            },
+            {
+              value: "as an interim rent under the Landlord and Tenants Acts",
+              text: "As an interim rent under the Landlord and Tenants Acts"
+            },
+            {
+              value: "at a rent review",
+              text: "At a rent review"
+            },
+            {
+              value: "on a renewal of a lease or tenancy",
+              text: "On a renewal of a lease or tenancy"
+            },
+            {
+              value: "as part of a sale and leaseback transaction",
+              text: "As part of a sale and leaseback transaction"
+            }
+          ]
+        }) }}
+
+      
+		
+	    {{ govukDateInput({
+	           id: "passport-issued",
+	           namePrefix: "passport-issued",
+	           fieldset: {
+	             legend: {
+	               text: "When was the rent actually agreed or set?",
+	               isPageHeading: true,
+	               classes: "govuk-fieldset__legend--m"
+	             }
+	           },
+	   		hint: {
+	   		    text: "For example, 27 9 2017"
+	   		  }
+	         }) }}
+		
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

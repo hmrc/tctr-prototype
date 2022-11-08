@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Finance Details</h1>
+
+
+      <form class="form" action="/trading-details" method="post">
+
+        {{ govukInput({
+          id: "cost",
+          name: "cost",
+          label: {
+            text: "What is the current annual rent in GBP?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          prefix: {
+            text: "£"
+          },
+          hint: {
+            text: "For example: 32,000"
+          },
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "sum-include-vat",
+            name: "sum-include-vat",
+            fieldset: {
+              legend: {
+                text: "Does this sum include VAT?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+
+        {{ govukDateInput({
+          id: "sum-first-payable",
+          namePrefix: "sum-first-payable",
+          fieldset: {
+            legend: {
+              text: "When did this sum first become payable by you or a previous occupier under the terms of the lease or agreement?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Throughput and turnover </h1>
+
+      <h1 class="govuk-heading-l">Promotions and price</h1>
+
+      <form class="form" action="/tenancy-lease-agreement-6020" method="post">
+
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "Please provide details of any inducements given to achieve the volumes shown",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          }
+        }) }}
+
+        <h1 class="govuk-heading-m">What is your retail price for the following fuels:</h1>
+
+        {{ govukInput({
+          label: {
+            text: "Premium unleaded",
+            classes: "govuk-body--m",
+            isPageHeading: true
+          },
+          suffix: {
+            text: "pence/litre"
+          },
+          classes: "govuk-input--width-5",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Diesel",
+            classes: "govuk-body--m",
+            isPageHeading: true
+          },
+          suffix: {
+            text: "pence/litre"
+          },
+          classes: "govuk-input--width-5",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "LPG",
+            classes: "govuk-body--m",
+            isPageHeading: true
+          },
+          suffix: {
+            text: "pence/litre"
+          },
+          classes: "govuk-input--width-5",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukDateInput({
+          id: "passport-issued",
+          namePrefix: "passport-issued",
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          }
+        }) }}
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

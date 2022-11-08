@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+	  <h1 class="govuk-heading-l">
+	        Declaration summary
+	      </h1>
+
+	    <p class="govuk-body">As you proceed, you can save your progress and come back later. You have 30 days from the first time you save to complete this form. After that, any entered information will be removed and you’ll need to start the form again.</p>
+
+	 <ol class="app-task-list">
+		 <li>
+	         <h2 class="app-task-list__section">
+	           1. About you
+	         </h2>
+			 	<ul class="app-task-list__items">
+					<li class="app-task-list__item">
+	             	   <span class="app-task-list__task-name">
+						   <a href="/about-you-standard">Provide your contact details</a></span>
+	             <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="trader-details-not-started">Not started</span>
+	           		</li>
+
+	           	 	
+		   	 	</ul></li></ol>
+          
+
+		  	 <ol class="app-task-list">
+
+		  	       <li>
+		  	         <h2 class="app-task-list__section">
+		  	           2. About the property
+		  	         </h2>
+
+		  	         <ul class="app-task-list__items">
+
+		  	           <!-- Movement details -->
+
+          
+		  	           <li class="app-task-list__item">
+		  	             <span class="app-task-list__task-name">
+              
+		  	               Describe how the property is used
+              
+		  	             </span>
+		             <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="goods-summary-not-started">
+		               Cannot start yet
+		             </span>
+		  	           </li>
+
+	           <li class="app-task-list__item">
+	             <span class="app-task-list__task-name">
+	               Provide details of your licence
+	             </span>
+	             <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="goods-summary-not-started">
+	               Cannot start yet
+	             </span>
+	           </li>
+
+
+	         </ul>
+	       </li>
+	     </ol>
+		 
+		 <ol class="app-task-list">
+			 <li>
+		         <h2 class="app-task-list__section">
+		           3. About your trading history
+		         </h2>
+				 	<ul class="app-task-list__items">
+						<li class="app-task-list__item">
+		             	   <span class="app-task-list__task-name">
+							   Provide your trading details</span>
+	             <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="goods-summary-not-started">
+	               Cannot start yet
+	             </span>
+		           		</li>
+
+		           	 	
+			   	 	</ul>
+				</li>
+			</ol>
+			
+   		 <ol class="app-task-list">
+   			 <li>
+   		         <h2 class="app-task-list__section">
+   		           4. About any franchises or lettings
+   		         </h2>
+   				 	<ul class="app-task-list__items">
+   						<li class="app-task-list__item">
+   		             	   <span class="app-task-list__task-name">
+   							  Declare any separate businesses</span>
+	             <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="goods-summary-not-started">
+	               Cannot start yet
+	             </span>
+   		           		</li>
+      						<li class="app-task-list__item">
+      		             	   <span class="app-task-list__task-name">
+      							   Declare any lettings</span>
+			             <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="goods-summary-not-started">
+			               Cannot start yet
+			             </span>
+      		           		</li>
+
+		           	 	
+   			   	 	</ul>
+   				</li>
+   			</ol>
+			
+      		
+		   	 <ol class="app-task-list">
+		   		 <li>
+		   	         <h2 class="app-task-list__section">
+		   	           6. Additional information
+		   	         </h2>
+		   			 	<ul class="app-task-list__items">
+		   					<li class="app-task-list__item">
+		   	             	   <span class="app-task-list__task-name">
+		   						Report additional information</span>
+			             <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="goods-summary-not-started">
+			               Cannot start yet
+			             </span>
+		   	           		</li>
+
+		   	           	 	<li class="app-task-list__item">
+		   	             <span class="app-task-list__task-name">
+		   	             Provide alternative contact details
+		   	             </span>
+		             <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="goods-summary-not-started">
+		               Cannot start yet
+		             </span>
+		   	           		</li>
+		   		   	 	</ul></li></ol>
+		 
+		 
+    </div>
+  </div>
+
+{% endblock %}

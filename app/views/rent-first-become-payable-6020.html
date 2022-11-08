@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Lease or agreement details </h1>
+
+      <form class="form" action="/rent-currently-under-review-6020" method="post">
+
+
+        {{ govukDateInput({
+          id: "passport-issued",
+          namePrefix: "passport-issued",
+          fieldset: {
+            legend: {
+              text: "When was the current rent first paid under the terms of the current lease or agreement?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Disregard any instances where the rent altered after changes in the amount of rates or service payable"
+          }
+        }) }}
+
+        {{ govukRadios({
+          idPrefix: "was-current-rent",
+          name: "was-current-rent",
+          fieldset: {
+            legend: {
+              text: "Was the current rent (ignoring indexation increases) fixed?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "at the beginning of a new lease/agreement",
+              text: "at the beginning of a new lease/agreement"
+            },
+            {
+              value: "as an interim rent under the Landlord & Tenants Act",
+              text: "as an interim rent under the Landlord & Tenants Act"
+            },
+            {
+              value: "at a rent review",
+              text: "at a rent review"
+            },
+            {
+              value: "on a renewal of a lease/tenancy",
+              text: "on a renewal of a lease/tenancy"
+            },
+            {
+              value: "as part of a sale and leaseback transaction",
+              text: "as part of a sale and leaseback transaction"
+            }
+          ]
+        }) }}
+
+        {{ govukDateInput({
+          id: "passport-issued",
+          namePrefix: "passport-issued",
+          fieldset: {
+            legend: {
+              text: "When was the rent actually agreed or set?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Disregard any instances where the rent altered after changes in the amount of rates or service payable"
+          }
+        }) }}
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,221 @@
+  {% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Trading details</h1>
+
+      <h1 class="govuk-heading-m">Enter trading receipts for the financial year:</h1>
+      <h1 class="govuk-heading-m">April 2019 to March 2020  </h1>
+      <br>
+
+      <form class="form" action="/trading-three-columns-6010" method="post">
+
+        {{ govukInput({
+          label: {
+          text: "Number of weeks",
+          classes: "govuk-label--m"
+          },
+          classes: "govuk-input--width-5",
+          suffix: {
+          text: "weeks"
+          },
+          hint: {
+            text: "If the accounts do not relate to a whole year, or if you were not trading continuously, state the relevant number of weeks"
+          },
+          id: "number-weeks",
+          name: "number-weeks"
+        }) }}
+
+      {{ govukInput({
+        id: "turnover",
+        name: "turnover",
+        label: {
+        text: "Turnover (excluding VAT)",
+        classes: "govuk-label--m",
+        isPageHeading: true
+        },
+        prefix: {
+        text: "£"
+        },
+        classes: "govuk-input--width-10",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        id: "alcohol",
+        name: "alcohol",
+        label: {
+        text: "Intoxicating liquor",
+        classes: "govuk-label--m",
+        isPageHeading: true
+        },
+        prefix: {
+        text: "£"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+        text: "Including soft drinks, crisps, nuts etc"
+        },
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        id: "food",
+        name: "food",
+        label: {
+        text: "Food",
+        classes: "govuk-label--m",
+        isPageHeading: true
+        },
+        prefix: {
+        text: "£"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+        text: "Excluding wine and liqueurs"
+        },
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        id: "other-receipts",
+        name: "other-receipts",
+        label: {
+        text: "Other receipts",
+        classes: "govuk-label--m",
+        isPageHeading: true
+        },
+        prefix: {
+        text: "£"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+        text: "including tobacco sales, admission charges etc"
+        },
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        id: "accomodation",
+        name: "accomodation",
+        label: {
+        text: "Accomodation",
+        classes: "govuk-label--m",
+        isPageHeading: true
+        },
+        prefix: {
+        text: "£"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+        text: "Excluding meals"
+        },
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+        text: "Average occupancy rate",
+        classes: "govuk-label--m"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+        text: "Lodges and hotels only"
+        },
+        id: "weight",
+        name: "weight",
+        suffix: {
+        text: "%"
+        },
+        spellcheck: false
+      }) }}
+
+      {% set percentLandlord %}
+      {{ govukInput({
+        id: "percent-landlord",
+        name: "percent-landlord",
+        type: "number",
+        autocomplete: "number",
+        spellcheck: false,
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "% paid to landlord"
+        }
+      }) }}
+      {% endset -%}
+
+      {% set percentTenant %}
+      {{ govukInput({
+        id: "percent-tenant",
+        name: "percent-tenant",
+        type: "number",
+        autocomplete: "number",
+        spellcheck: false,
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "% retained by tenant or occupier"
+        }
+      }) }}
+      {% endset -%}
+
+      <!--{{ govukRadios({
+          idPrefix: "awp-gaming-machine",
+          name: "awp-gaming-machine",
+          fieldset: {
+            legend: {
+              text: "Are AWP gaming machines takings shared between occupier and landlord?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "Excluding prizes, hirer's charge, rentals and license fees"
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+                html: percentLandlord
+              }
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}-->
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

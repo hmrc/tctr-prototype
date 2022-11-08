@@ -1,0 +1,72 @@
+const express = require('express')
+const router = express.Router()
+
+// Add your routes here - above the module.exports line
+
+
+router.post('/reference-answer', function (req, res) {
+
+  var refNumber = req.session.data['reference-number']
+
+  if (refNumber == "001"){
+    res.redirect('/ownerPageReference')
+  } else if (refNumber == "002") {
+        res.redirect('/occupierPageReference')
+  } else if (refNumber == "003") {
+        res.redirect('/agentPageReference')
+  } else if (refNumber == "004") {
+        res.redirect('/otherPageReference')
+  } else if (refNumber == "005") {
+        res.redirect('/saveForLater')
+  } else if (refNumber == "100") {
+        res.redirect('/still-connected')
+  } else if (refNumber == "999") {
+        res.redirect('/still-connected')
+  } else {
+    res.redirect('/what-service')
+  }
+
+})
+
+router.post('/still-connected-answer', function (req, res) {
+  var stillConnected = req.session.data['still-connected-address']
+
+  if (stillConnected == "yes-connected"){
+    res.redirect('/about-you')
+  } else if (stillConnected == "yes-edit-address") {
+        res.redirect('/edit-connected-address')
+  } else if (stillConnected == "no-connected") {
+        res.redirect('/ever-connected')
+  } else {
+    res.redirect('/error-page')
+  }
+
+})
+
+router.post('/s4lAnswer', function (req, res) {
+var password = req.session.data['s4l-password']
+
+if (password == "password"){
+  res.redirect('/ownerPageReference')
+  }
+})
+
+
+router.post('/what-service-answer', function (req, res) {
+  var whatService = req.session.data['are-you-a']
+
+  if (whatService == "Owner"){
+    res.redirect('/ownerPage')
+  } else if (whatService == "Occupier") {
+        res.redirect('/occupierPage')
+  } else if (whatService == "Agent (representative)") {
+        res.redirect('/agentPage')
+  } else if (whatService == "Other representative") {
+        res.redirect('/otherPage')
+  } else {
+    res.redirect('/your-details')
+  }
+
+})
+
+module.exports = router

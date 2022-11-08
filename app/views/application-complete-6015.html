@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="" method="post">
+
+
+        {% block content %}
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              {{ govukPanel({
+                titleText: "Declaration sent successfully"
+              }) }}
+
+              <p class="govuk-body">We have sent you a confirmation email.</p>
+			  
+			   <p class="govuk-body-m">Please <a href="#">Save a copy of your answers</a> (Print or PDF Download). You will be unable to retreive your answers beyond this point.</p>
+
+              <h2 class="govuk-heading-m">What happens next</h2>
+
+              <p class="govuk-body">
+                We'll update our records with the information you have given. You do not need to contact us, but we may contact you to check some of the details you provided.
+              </p>
+
+              <p class="govuk-body">
+                <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+              </p>
+
+                  
+            </div>
+          </div>
+        {% endblock %}
+
+
+      </form>
+
+    </div>
+  </div>

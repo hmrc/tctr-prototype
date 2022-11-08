@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-m">About your trading history</span>
+	  <h1 class="govuk-heading-l">Static caravans</h1>
+      <h2 class="govuk-heading-m">How many single static caravans are there in the following categories?</h2>
+
+
+      
+
+
+        <style>
+          .row {
+            display: flex;
+          }
+
+          .form-grp {
+            margin: 10px
+          }
+          .form-grp label {
+            display:block;
+          }
+		  
+		  .row {margin:20px 0;}
+		  
+		  div span.govuk-input__wrapper {display:inline-block;}
+		  
+		  .govuk-input__prefix, .govuk-input__suffix {
+		    font-size: 19px;
+		    font-size: 1.1875rem;
+		    line-height: 1.38;
+	
+		  }
+		  
+		  .govuk-input__suffix {
+			margin-right:30px;
+		  }
+		  
+		  .govuk-input__prefix.secondCol {
+			margin-left:70px;
+		  }
+		  
+		  .row.weeks span {margin-left:50px;}
+		  
+		  p {font-weight:bold;}
+		  
+		  
+		 
+		  
+          </style>
+		  
+		 
+
+        <form class="form" action="/static-caravans-age" method="post">
+
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Owned by the operator and used for fleet hire",
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+		
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Privately owned and used only by owner and family",
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+		
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Sub-let by operator to holidaymakers on behalf private owners as fleet hire",
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+		
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Sub-let by private owners to holiday makers other than family and friends",
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+		
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Used for charitable purposes",
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+		
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Used for seasonal staff",
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+		
+		
+		
+		
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "How many static caravans are on the site at the date of completion of this notice?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+
+        
+
+        
+      
+			
+			
+			
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
