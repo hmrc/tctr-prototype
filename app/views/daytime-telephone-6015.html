@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">About you </h1>
+
+      <h1 class="govuk-body-m">These should be the details of the person completing this.<p>We will only use your contact details to update you about your enquiry.</h1>
+
+      <form class="form" action="/about-the-property" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Daytime telephone number",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Email address",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-m">About your trading history</span>
+      <br>
+
+      <h1 class="govuk-heading-l">Would you rather give details of your cost of sales, or your gross profits? </h1>
+
+      <h1 class="govuk-body-m">We need to see details of your turnover broken down by specific department. You can decide whether you'd like to provide this using figures for your cost of sales, or gross profits.</h1>
+
+
+      <form class="form" action="/cost-or-gross-answer-6015" method="post">
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+            idPrefix: "cost-or-gross-6015",
+            name: "cost-or-gross-6015",
+            fieldset: {
+              legend: {
+                text: "",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "Cost of sales",
+                text: "Cost of sales"
+              },
+              {
+                value: "Gross profits",
+                text: "Gross profits"
+              }
+            ]
+          }) }}
+
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

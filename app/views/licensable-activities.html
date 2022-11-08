@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/details-of-conditions" method="post">
+
+
+        {% set yesHtml %}
+        {{ govukCharacterCount({
+          name: "licensable-activities",
+          id: "licensable-activities",
+          maxlength: 200,
+          label: {
+            text: "Can you provide more detail?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Do not include personal or financial information like your National Insurance number or credit card details."
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "contact",
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Do licensable activities regularly commence before 10:00 or continue after 23:30 on any day of the week?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: yesHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No",
+              conditional: {
+                html: noHtml
+              }
+            }
+          ]
+        }) }}
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

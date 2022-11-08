@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Lease or agreement details </h1>
+
+      <form class="form" action="/rent-first-become-payable-6020" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Please state the amount of rent that's subject to VAT",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Domestic use is exempt"
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-10",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "vat-payable-6020",
+          name: "vat-payable-6020",
+          fieldset: {
+            legend: {
+              text: "Can the VAT payable be reclaimed as part of your business expenditure?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,643 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers</h1>
+
+      <h2 class="govuk-heading-m">Turnover</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Turnover
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['turnover'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Accomodation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['turnover'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Average Occupancy Rate
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['turnover'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Food
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['food'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Intoxicating liquor
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['alcohol'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other receipts
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['other-receipts'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total sales revenue
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['awp-gaming-machine-table'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Cost of sales</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Accomodation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['turnover'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Food
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['food'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Intoxicating liquor
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['alcohol'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other receipts
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['other-receipts'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total cost of sales
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['awp-gaming-machine-table'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+      <h2 class="govuk-heading-m">Gross profits</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Year ending
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['turnover'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Accomodation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['turnover'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Food
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['food'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Intoxicating liquor
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['alcohol'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other receipts
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['other-receipts'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total gross profits
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['awp-gaming-machine-table'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+      <h2 class="govuk-heading-m">Total payroll costs</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Managers and Staff
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['turnover'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Director's Renumeration
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['turnover'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+      <h2 class="govuk-heading-m">Variable Operating Expenses</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Rent
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['rent-6015'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Business Rates
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['business-rates'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Insurance
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['insurance'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Loan interest
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['loan-interest'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Advertising, marketing and promotions
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['advertising-fixed'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Depreciation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['depreciation'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Fixed Operating Expenses</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Energy and utilities
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['energy-utilities'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Cleaning and laundry
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['cleaning'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Building maintenance and repairs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['building-maintenance'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Repairs and renewal of fixtures and fittings, equipment etc
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['repair-fixtures'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Advertising, marketing and promotions
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['advertising'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Administration and sundries
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['administration'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Entertainment
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['entertainment'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['other-variable'] }}
+            {{ data['other-variable-money'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total variable operating expenses
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['otal-variable'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Other Gross profits</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Contribution to Head Office
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['contribution-head-office'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['other-variable'] }}
+            {{ data['other-variable-cost-other'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Net Profit</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Total net profit
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['total-net'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            As percentage of total sales revenue
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['other-percentage'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            USAH Information
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['usah'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+      <form action="/trading-add-to-list" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+                <h1 class="govuk-body-m"><a href="#">Print this page</a></h1>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

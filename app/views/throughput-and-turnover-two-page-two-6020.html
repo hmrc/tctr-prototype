@@ -1,0 +1,173 @@
+    {% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Throughput and turnover </h1>
+
+      <h1 class="govuk-heading-m">Please provide turnover figures (excluding VAT) for April 2020 to April 2021</h1>
+      <h1 class="govuk-body-m">You must provide details for any non-fuel income from the property, not previously details</h1>
+
+      <h1 class="govuk-body-m">Please show the different turnover or income streams</h1>
+
+      <form class="form" action="/throughput-and-turnover-three-6020" method="post">
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Shop turnover",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Excluding fuel receipts and VAT"
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Car wash turnover",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Excluding VAT"
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Jet wash turnover",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Excluding VAT"
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Lottery turnover",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Excluding fuel receipts and VAT"
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Lottery turnover",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Excluding fuel receipts and VAT"
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Paypoint/Payzone turnover",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Excluding VAT"
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Other income",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "For example parking, Parcel Drop etc, excluding VAT"
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

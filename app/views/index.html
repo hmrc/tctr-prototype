@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Send information about your premises to the Valuation Office Agency
+      </h1>
+
+      <p>You must send the Valuation Office Agency (VOA) information about your business property if they have asked you to. You must also let us know if you no longer own or rent the property.</p>
+      <p>The information you provide will be used by the local authority to help calculate business rates in your area.</p>
+
+      <p>If you do not send the information within 56 days of getting the letter the VOA sent to you, you may have to pay a penalty.</p>
+
+      <h2 class="govuk-heading-m">What you’ll need</h2>
+
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the reference number from the letter VOA sent you</li>
+		<li>trading information for the last 3 financial years, or since you occupied the property</li>
+		<li>details of any franchises or lettings run from the property as a speparate business (if applicable)</li>
+		</ul>
+		
+	
+		<h2 class="govuk-heading-s">If you do not own the property, you’ll also need:</h2>
+		<ul class="govuk-list govuk-list--bullet">
+        <li>your lease or agreement, including the current rent you pay</li>
+		<li>information about any recent changes to your rent or any rent-free periods</li>
+		 <li>information about any changes you've made to the property that could affect its value</li>
+   
+      </ul>
+
+      {{ govukWarningText({
+        text: "You could be taken to court if you submit false information",
+        iconFallbackText: "Warning"
+      }) }}
+
+
+      <a href="/reference" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+	  
+	  <h2 class="govuk-heading-m">Before you begin</h2>
+	  
+	 
+    
+      
+	  <div role="note" aria-label="Information" class="application-notice info-notice" style="border-left: 10px solid #b1b4b6;padding: 1em 0 1em 1em;margin: 2em 0;">
+	  <p style="margin:0">This service is also available <a href="#">in Welsh (Cymraeg)</a></p>
+	  </div>
+
+
+	  
+	  <p>Completing this form can take anywhere between 20 minutes and an hour depending on your tenure and your business. <strong>You do not have to complete the form in one go.</strong> You can save what you've done and return to finish it later.</p>
+	  
+	  <!--h2 class="govuk-heading-m">If you need help</h2>
+	  
+	  <p>Contact the VOA team if you need help to use the service. You'll find their contact details on the letter they sent you.</p-->
+	  
+	  <h3 class="govuk-heading-s">Explore the topic</h3>
+	  
+	  <p><a href="#">Business premises and business rates</a></p>
+	  
+	  
+
+    </div>
+	
+	<!--div class="govuk-grid-column-one-third">
+	        <h2 class="govuk-heading-m" style="margin-top:200px">Related content</h2>
+	        <p class="govuk-body"><a href="#">Business rates</a></p>
+			<p class="govuk-body"><a href="#">Find a business rates valuation</a></p>
+			<p class="govuk-body"><a href="#">Business rates relief</a></p>
+			<p class="govuk-body"><a href="#">Contact your council about a business rates bill</a></p>
+	      </div-->
+  </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/catering-operation" method="post">
+
+        <h1 class="govuk-heading-l">Error</h1>
+        <h1 class="govuk-body-l">You have reached this page as you have not selected an option. Please go back and select an option for the journey to continue</h1>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

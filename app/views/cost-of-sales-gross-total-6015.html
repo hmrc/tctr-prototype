@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <span class="govuk-caption-m">About your trading history</span>
+      <br>
+
+      <form class="form" action="/total-payroll-costs-6015" method="post">
+		
+
+        <h1 class="govuk-heading-l">Gross profit</h1>
+
+        <h1 class="govuk-body-m">As you've already given a breakdown of your departmental cost of sales, you only need to provide your total gross profits.</h1>
+
+        <style>
+          .row {
+            display: flex;
+          }
+
+          .form-grp {
+            margin: 10px
+          }
+          .form-grp label {
+            display:block;
+          }
+          </style>
+
+          <table>
+	  	
+	            <tr>
+	              <th><h1 class="govuk-heading-s" style="text-align: left">Financial year end</h1></th>
+	              <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2019</h1></th>
+	              <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2010</h1></th>
+	              <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2021</h1></th>
+	            </tr>
+	  		
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Total gross profits</h1>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="turnover1"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "turnover1",
+                    name: "turnover1"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="turnover2"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "turnover2",
+                    name: "turnover2"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="turnover3"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "turnover3",
+                    name: "turnover3"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+          </table>
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

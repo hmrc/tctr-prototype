@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     
+
+		<span class="govuk-caption-m" id="section-x-of-y">About you</span>
+
+			<form action="/task-list" method="post">
+
+			  {{ govukRadios({
+				id: "have-you-completed-this-section",
+			    name: "have-you-completed-this-section",
+			    fieldset: {
+			      legend: {
+			        text: "Have you completed this section?",
+			        isPageHeading: false,
+			        classes: "govuk-fieldset__legend--l"
+			      }
+			    },
+			    items: [
+			      {
+			        value: "yes",
+			        text: "Yes, I’ve completed this section"
+			      },
+			      {
+			        value: "no",
+			        text: "No, I’ll come back to it later"
+			      }
+			    ]
+			  }) }}
+
+
+        
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

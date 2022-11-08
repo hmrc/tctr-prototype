@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-m">About your lease or agreement (continued)</span>
+      <br>
+
+      <h1 class="govuk-heading-l">Who is ultimately responsible for the following costs?</h1>
+
+      <h1 class="govuk-body-m">This could be either by direct payment, or by reimbursing the person who initially paid for the service</h1>
+
+
+      <form class="form" action="/rent-include-trade-6015" method="post">
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "outside-repairs",
+          name: "outside-repairs",
+          fieldset: {
+            legend: {
+              text: "Outside repairs",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Landlord",
+              text: "Landlord"
+            },
+            {
+              value: "Tenant",
+              text: "Tenant"
+            },
+            {
+              value: "Both",
+              text: "Both"
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "inside-repairs",
+          name: "inside-repairs",
+          fieldset: {
+            legend: {
+              text: "Inside repairs public and business areas",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Landlord",
+              text: "Landlord"
+            },
+            {
+              value: "Tenant",
+              text: "Tenant"
+            },
+            {
+              value: "Both",
+              text: "Both"
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "building-insurance",
+          name: "building-insurance",
+          fieldset: {
+            legend: {
+              text: "Building insurance",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Landlord",
+              text: "Landlord"
+            },
+            {
+              value: "Tenant",
+              text: "Tenant"
+            },
+            {
+              value: "Both",
+              text: "Both"
+            }
+          ]
+        }) }}
+
+        {{ govukCharacterCount({
+          name: "with-hint",
+          id: "with-hint",
+          maxlength: 1000,
+          label: {
+            text: "If responsible for any area are shared, give details",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "For example, costs are shared equally, landlord 75%, tenant 25%"
+          }
+        }) }}
+
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

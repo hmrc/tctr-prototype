@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Lease or agreement details </h1>
+
+      <form class="form" action="/current-rent-fixed-6030" method="post">
+
+        {{ govukCheckboxes({
+          idPrefix: "waste",
+          name: "waste",
+          fieldset: {
+            legend: {
+              text: "Does the rent payable:",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that applies. Leave empty if not applicable."
+          },
+          items: [
+            {
+              value: "include operator or staff living accomodation",
+              text: "include operator or staff living accomodation"
+            },
+            {
+              value: "include other property",
+              text: "include other property"
+            },
+            {
+              value: "relate to the only part of the property",
+              text: "relate to the only part of the property"
+            },
+            {
+              value: "relate to the land (excluding buildings)",
+              text: "relate to the land (excluding buildings)"
+            },
+            {
+              value: "relate to a 'shell' unit",
+              text: "relate to a 'shell' unit"
+            }
+          ]
+        }) }}
+
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "Provide details"
+          }
+        }) }}
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

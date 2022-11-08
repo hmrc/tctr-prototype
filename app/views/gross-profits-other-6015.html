@@ -1,0 +1,200 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-caption-m">Your trading history</h1>
+
+      <form class="form" action="/net-profit-6015" method="post">
+
+        <h1 class="govuk-heading-l">Other costs</h1>
+
+        <h1 class="govuk-body-m">All other costs not included elsewhere that have been deducted before calculating the net profit</h1>
+
+        <style>
+          .row {
+            display: flex;
+          }
+
+          .form-grp {
+            margin: 10px
+          }
+          .form-grp label {
+            display:block;
+          }
+          </style>
+
+          <table>
+           <tr>
+             <th><h1 class="govuk-heading-s" style="text-align: left">Financial year end</h1></th>
+             <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2019</h1></th>
+             <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2010</h1></th>
+             <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2021</h1></th>
+           </tr>
+            <hr>
+
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Contributions to head office</h1>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="headoffice1"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "headoffice1-other",
+                    name: "headoffice1-other"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                <label for="accom2"></label>
+                {{ govukInput({
+                  label: {
+                    text: ""
+                  },
+                  prefix: {
+                    text: "£"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "headoffice2-other",
+                  name: "headoffice2-other"
+                }) }}
+              </div>
+            </td>
+              <td>
+                <div class="form-grp">
+                  <label for="accom3"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "headoffice3-other",
+                    name: "headoffice3-other"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Other<p>(please specify)</p></h1>
+              </td>
+              <td colspan="2">
+	  		
+	                
+   
+                <div class="form-grp">
+                  <label for="other1-other"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: ""
+                    },
+					classes: "govuk-input--width-20",
+					  id: "width-20",
+					  name: "width-20"
+					}) }}
+                </div>
+              </td>
+		  </tr>
+              <tr>
+                <td>
+                  <h1 class="govuk-heading-s"></h1>
+                </td>
+                <td>
+                <div class="form-grp">
+                <label for="other2-other"></label>
+                {{ govukInput({
+                  label: {
+                    text: ""
+                  },
+                  prefix: {
+                    text: "£"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "other1-other",
+                  name: "other1-other"
+                }) }}
+              </div>
+            </td>
+              <td>
+                <div class="form-grp">
+                  <label for="other3-other"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "other3-other",
+                    name: "other3-other"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="other3-other"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "other3-other",
+                    name: "other3-other"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+			
+          </table>
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

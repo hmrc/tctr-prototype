@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-m">About your trading history</span>
+	  <h1 class="govuk-heading-l">Other holiday accommodation</h1>
+
+      
+
+
+        <style>
+          .row {
+            display: flex;
+          }
+
+          .form-grp {
+            margin: 10px
+          }
+          .form-grp label {
+            display:block;
+          }
+		  
+		  .row {margin:20px 0;}
+		  
+		  div span.govuk-input__wrapper {display:inline-block;}
+		  
+		  .govuk-input__prefix, .govuk-input__suffix {
+		    font-size: 19px;
+		    font-size: 1.1875rem;
+		    line-height: 1.38;
+	
+		  }
+		  
+		  .govuk-input__suffix {
+			margin-right:30px;
+		  }
+		  
+		  .govuk-input__prefix.secondCol {
+			margin-left:70px;
+		  }
+		  
+		  .row.weeks span {margin-left:50px;}
+		  
+		  p {font-weight:bold;}
+		  
+		  
+		 
+		  
+          </style>
+		  
+		 
+
+        <form class="form" action="/trading-three-columns-holiday-6045" method="post">
+			
+            {% set otherHtml %}
+	        {{ govukInput({
+	          id: "turnover-year",
+	          name: "turnover-year",
+	          label: {
+	            text: "How many weeks is the site open?",
+	            classes: "govuk-label--s",
+	            isPageHeading: true
+	          },
+	          suffix: {
+	            text: "weeks"
+	          },
+	          classes: "govuk-input--width-2",
+	          spellcheck: false
+	        }) }}
+            {% endset -%}
+			
+	        
+
+	        {{ govukRadios({
+	          idPrefix: "is-a-website",
+	          name: "is-a-website",
+	          fieldset: {
+	            legend: {
+	              text: "Are you open all year?",
+	              isPageHeading: true,
+	              classes: "govuk-fieldset__legend--m"
+	            }
+	          },
+	          items: [
+	            {
+	              value: "Yes",
+	              text: "Yes"
+	            },
+	            {
+	              value: "No",
+	              text: "No",
+            conditional: {
+              html: otherHtml
+            }
+	            }
+	          ]
+	        }) }}
+			
+			
+			
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

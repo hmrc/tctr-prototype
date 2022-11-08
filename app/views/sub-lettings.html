@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<style>
+	ul {font-family: "GDS Transport",arial,sans-serif;font-size:19px;}
+	li {margin-bottom:0.5em;}
+</style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+		
+
+      <h1 class="govuk-heading-l">Do you have any franchises or sub-lets tied to the property?</h1>
+
+      <p class="govuk-body-m">These include:</p>
+	
+      <ul>
+      <li>catering operation or letting accommodation run as a separate business if you've not included their turnover on the previous page</li>
+      
+      <li>rent received from letting other parts of the property including advertising rights, stations or hoardings</li>
+      </ul>
+	  
+
+      <form class="form" action="/reporting-answer" method="post">
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "report-on-page",
+        name: "report-on-page",
+        fieldset: {
+          legend: {
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

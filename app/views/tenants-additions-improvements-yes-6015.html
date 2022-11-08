@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-m">About your lease or agreement (continued)</span>
+      <br>
+
+      <form class="form" action="/capital-sum-premium-6015" method="post">
+
+        {{ govukCharacterCount({
+          name: "tenants-additions-improvements-yes",
+          id: "tenants-additions-improvements-yes",
+          maxlength: 200,
+          label: {
+            text: "Please tell us about the improvements made, and how they affected the rent",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "For example, we fitted out the kitchen and the rent payable is equivalent to that of a shell unit"
+          }
+          }) }}
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

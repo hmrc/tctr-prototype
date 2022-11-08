@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/what-service-answer" method="post">
+
+        {{ govukRadios({
+          idPrefix: "are-you-a",
+          name: "are-you-a",
+          fieldset: {
+            legend: {
+              text: "Are you a:",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Owner",
+              text: "Owner"
+            },
+            {
+              value: "Occupier",
+              text: "Occupier"
+            },
+            {
+              value: "Agent (representative)",
+              text: "Agent (representative)"
+            },
+            {
+              value: "Other representative",
+              text: "Other representative"
+            }
+          ]
+        }) }}
+
+
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "Other",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Test to show text being moved over from page to page"
+          }
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

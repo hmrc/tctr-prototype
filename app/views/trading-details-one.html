@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-m" id="section-x-of-y">About your trading history</span>
+      <h1 class="govuk-heading-l">Occupation and accounting information</h1>
+
+      <form class="form" action="/trading-details-one" method="post">
+
+      <h1 class="govuk-body-m">The questions on this page will ensure we only ask you for relevant information about your trading history</h1>
+
+
+	  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  
+	      <h1 class="govuk-fieldset__heading">
+	        When did you first occupy the property?
+	      </h1>
+  
+	    </legend>
+  
+
+	    <div id="passport-issued-hint" class="govuk-hint">
+	      For example, 9 2017
+	    </div>
+
+
+  
+	      <div class="govuk-date-input__item">
+	        <div class="govuk-form-group">
+	          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+	            Month
+	          </label>
+      
+	        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+      
+	        </div>
+	      </div>
+  
+	      <div class="govuk-date-input__item">
+	        <div class="govuk-form-group">
+	          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+	            Year
+	          </label>
+      
+	        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+      
+	        </div>
+	      </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                When does your current financial year end?
+              </h1></legend>
+  			  <div id="reference-number-hint" class="govuk-hint">
+  			      If your financial year end has changed within the last 3 years, you can declare the former dates on the next page
+  			    </div>
+  			  <div id="reference-number-hint" class="govuk-hint">
+  			      for example, 27 9
+  			    </div>
+
+            <div class="govuk-date-input" id="passport-issued">
+  			  
+              <div class="govuk-date-input__item">
+	  			  
+                <div class="govuk-form-group">
+	  			  
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="accounts-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-year" name="accounts-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+			  <div class="govuk-button-group">
+			    {{ govukButton({
+			      text: "Save and continue"
+			    }) }}
+
+			    <a class="govuk-link govuk-button govuk-button--secondary" href="/save-for-later">Save as draft</a>
+			  </div>
+          
+		      
+
+		</p>
+		
+
+      </form>
+	  
+	  
+	
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Get help with this page
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+	  
+	  <strong>Why we need this information</strong><br/>The VOA uses the trading history of businesses to help with non-domestic property valuations.<br/><br/>
+	If you’ve occupied your premises for 3 years or more, you’ll be asked for details from your last three years of completed accounts. You won’t be asked to provide details from the current financial year.<br/><br/>
+	If you first occupied the property within the last 3 years, you’ll be asked for details from any full years completed accounts you have. You’ll also need to provide details from the current financial year.<!--br/><br/>
+	
+	 <strong>If you need more help</strong><br/>Contact the VOA team for help using this service. You’ll find their contact details on the letter they sent you.-->
+	 
+  </div>
+</details>
+	  
+	  
+	  
+	  
+
+    </div>
+  </div>
+
+{% endblock %}

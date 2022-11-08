@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/s4lAnswer" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Enter your password",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+              text: "This will take you to the Owner Page"
+          },
+          id: "s4l-password",
+          name: "s4l-password"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

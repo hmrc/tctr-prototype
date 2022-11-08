@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+		
+	
+		
+		
+		
+
+      <h1 class="govuk-heading-l">What’s your connection to the property?</h1>
+
+		  
+
+      <form class="form" action="/connection-answer" method="post">
+
+        
+
+        {{ govukRadios({
+          idPrefix: "representative",
+          name: "representative",
+          fieldset: {
+            legend: {
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "OCT",
+              text: "Occupier or trustee for occupier",
+              hint: { text: "Select this if you’re renting or leasing the property, even through a leaseback arrangement"}
+            },
+            {
+              value: "OWT",
+              text: "Owner or trustee for owner",
+              hint: {text: "Select this if you own and occupy the property—you're considered an occupier if you own the property and lease it back to a business you operate from the property"}
+            },
+            {
+              value: "OCA",
+              text: "Occupier's agent"
+            },
+            {
+              value: "OWA",
+              text: "Owner's agent"
+            }
+          ]
+        }) }}
+		
+		
+		
+        
+		
+		<p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		     
+    
+  
+		</p>
+		<details class="govuk-details" data-module="govuk-details">
+		  <summary class="govuk-details__summary">
+		    <span class="govuk-details__summary-text">
+		      Get help with this page
+		    </span>
+		  </summary>
+		  <div class="govuk-details__text">
+		    <strong>People who should fill out the form</strong><br/>We need people who occupy the property to complete this form. In a non-domestic setting, the occupier could be a business, a charity, or a not-for-profit organisation. You must also fill out the form if you have a lease, tenancy, or agreement to occupy and the property is vacant.<br/><br/>
+			<strong>Trustees for owners or occupiers</strong><br/>Owners and occupiers can ask someone to complete the form on their behalf. This could be an employee of their business, for example.<br/><br/>
+			<strong>Agents for owners or occupiers</strong><br/>This form can also be completed by a professional agent whom you have instructed. Some people find it useful to enlist the services of an agent if hey have complicated business arrangments.<!--br/><br/>
+			<strong>If you need more help</strong><br/>Contact the VOA team for help using this service. You’ll find their contact details on the letter they sent you.-->
+		  </div>
+		</details>
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+		
+		 <span class="govuk-caption-m" id="section-x-of-y">About your lease or agreement</span>
+
+     
+
+      <form class="form" action="/lease-begin-6010" method="post">
+		  
+		  <div class="govuk-form-group">
+		    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+		      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+		        <h1 class="govuk-fieldset__heading">
+		          When was the current rent first paid under the terms of the current lease or agreement?
+		        </h1>
+		      </legend>
+		      <div id="passport-issued-hint" class="govuk-hint">
+		        Disregard any instances where the rent altered after changes in the amount of rates or services payable
+		      </div>
+		      <div id="passport-issued-hint" class="govuk-hint">
+		        For example, 27 9 2017
+		      </div>
+		      <div class="govuk-date-input" id="passport-issued">
+		        <div class="govuk-date-input__item">
+		          <div class="govuk-form-group">
+		            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+		              Day
+		            </label>
+		            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+		          </div>
+		        </div>
+		        <div class="govuk-date-input__item">
+		          <div class="govuk-form-group">
+		            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+		              Month
+		            </label>
+		            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+		          </div>
+		        </div>
+		        <div class="govuk-date-input__item">
+		          <div class="govuk-form-group">
+		            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+		              Year
+		            </label>
+		            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+		          </div>
+		        </div>
+		      </div>
+
+		    </fieldset>
+		  </div>
+
+
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

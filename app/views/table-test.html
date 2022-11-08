@@ -1,0 +1,346 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-m">About your trading history (continued)</span>
+      <br>
+
+      <h1 class="govuk-heading-l">Turnover</h1>
+
+      <h1 class="govuk-body-m">In the following section, you need to provide us with your trading information for the last 3 years. If you took occupation within that time, please provide your trading history since you occupied the property</h1>
+
+        <style>
+          .row {
+            display: flex;
+          }
+
+          .form-grp {
+            margin: 10px;
+            display: inline-block;
+            text-align: right;
+            width: 150px;
+          }
+          .form-grp label {
+            display:block;
+          }
+
+          .test {
+
+            margin: 10px;
+            display: inline-block;
+            text-align: right;
+            width: 150px;
+
+          }
+
+          .table {
+            display: table;
+            width: 100%; //if you want the table to extend the full width of the parent
+          }
+
+          .table > div {
+            display: table-cell;
+          }
+
+          .strong {
+              display: inline-block;
+              width: 200px;
+              text-align: left;
+          }
+
+          </style>
+
+        <form class="form" action="/explain-business-cost-or-gross-6015" method="post">
+
+          <div class="table">
+            <div class="share_edit_flag">
+              <div class="strong"><span><h1 class="govuk-heading-s">Trading period</h1></span></div>
+              <p>
+              <div class="strong"><span><h1 class="govuk-heading-s">Accomodation</h1></span></div>
+              <p>
+              <div class="strong"><span><h1 class="govuk-heading-s">Average occupancy rate</h1></span></div>
+              <p>
+              <div class="strong"><span><h1 class="govuk-heading-s">Food</h1></span></div>
+              <p>
+              <div class="strong"><span><h1 class="govuk-heading-s">Alcohol</h1></span></div>
+              <p>
+              <div class="strong"><span><h1 class="govuk-heading-s">Other receipts</h1></span></div>
+              <p>
+              <div class="strong"><span><h1 class="govuk-heading-s">Total sales revenue</h1></span></div>
+
+            </div>
+
+            <div class="share_edit_flag">
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                suffix: {
+                  text: "weeks"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                suffix: {
+                  text: "%"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+            </div>
+
+            <div class="share_edit_flag">
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                suffix: {
+                  text: "weeks"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                suffix: {
+                  text: "%"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+            </div>
+
+            <div class="share_edit_flag">
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                suffix: {
+                  text: "weeks"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                suffix: {
+                  text: "%"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+              <span>{{ govukInput({
+                label: {
+                  text: ""
+                },
+                prefix: {
+                  text: "£"
+                },
+                classes: "govuk-input--width-5",
+                id: "turnover1",
+                name: "turnover1"
+              }) }}</span>
+            </div>
+
+          </div>
+
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

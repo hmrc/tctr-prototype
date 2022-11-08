@@ -1,0 +1,335 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-caption-m">Your trading history</h1>
+
+      <form class="form" action="/gross-profits-other-6015" method="post">
+
+        <h1 class="govuk-heading-l">Fixed operating expenses</h1>
+
+        <style>
+          .row {
+            display: flex;
+          }
+
+          .form-grp {
+            margin: 10px
+          }
+          .form-grp label {
+            display:block;
+          }
+          </style>
+
+          <table>
+            <tr>
+              <th><h1 class="govuk-heading-s" style="text-align: left">Financial year end</h1></th>
+              <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2019</h1></th>
+              <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2010</h1></th>
+              <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2021</h1></th>
+            </tr>
+            <hr>
+
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Rent</h1>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="rent1"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "rent1",
+                    name: "rent1"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                <label for="rent2"></label>
+                {{ govukInput({
+                  label: {
+                    text: ""
+                  },
+                  prefix: {
+                    text: "£"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "rent2",
+                  name: "rent2"
+                }) }}
+              </div>
+            </td>
+              <td>
+                <div class="form-grp">
+                  <label for="rent3"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "rent3",
+                    name: "rent3"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Business rates</h1>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="food1"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "food1-fixed",
+                    name: "food1-fixed"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                <label for="food2"></label>
+                {{ govukInput({
+                  label: {
+                    text: ""
+                  },
+                  prefix: {
+                    text: "£"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "food2-fixed",
+                  name: "food2-fixed"
+                }) }}
+              </div>
+            </td>
+              <td>
+                <div class="form-grp">
+                  <label for="3"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "food3-fixed",
+                    name: food3-fixed
+                  }) }}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Insurance</h1>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="alco1"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "alco1-fixed",
+                    name: "alco1-fixed"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                <label for="alco2"></label>
+                {{ govukInput({
+                  label: {
+                    text: ""
+                  },
+                  prefix: {
+                    text: "£"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "alco2-fixed",
+                  name: "alco2-fixed"
+                }) }}
+              </div>
+            </td>
+              <td>
+                <div class="form-grp">
+                  <label for="alco3"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "alco3-fixed",
+                    name: "alco3-fixed"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Loan interest</h1>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="other1"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "other1-fixed",
+                    name: "other1-fixed"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                <label for="other2"></label>
+                {{ govukInput({
+                  label: {
+                    text: ""
+                  },
+                  prefix: {
+                    text: "£"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "other2-fixed",
+                  name: "other2-fixed"
+                }) }}
+              </div>
+            </td>
+              <td>
+                <div class="form-grp">
+                  <label for="other3"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "other3-fixed",
+                    name: "other3-fixed"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Depreciation</h1>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="dep1"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "dep1",
+                    name: "dep1"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                <label for="dep2"></label>
+                {{ govukInput({
+                  label: {
+                    text: ""
+                  },
+                  prefix: {
+                    text: "£"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "dep2",
+                  name: "dep2"
+                }) }}
+              </div>
+            </td>
+              <td>
+                <div class="form-grp">
+                  <label for="dep3"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "dep3",
+                    name: "dep3"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+
+          </table>
+
+
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

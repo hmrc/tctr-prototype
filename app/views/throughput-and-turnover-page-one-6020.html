@@ -1,0 +1,160 @@
+    {% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Throughput and turnover </h1>
+
+      <h1 class="govuk-heading-m">What are the total volume of all fuel sales in litres dispensed for April 2021 to April 2022</h1>
+      <h1 class="govuk-body-m">Bunkered fuel where a hadling fee only is charged should be shown separated</h1>
+
+      <form class="form" action="/throughput-and-turnover-page-two-6020" method="post">
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Total fuel sales of petrol, diesel, LPG and other fuels",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Enter number of litres"
+          },
+          suffix: {
+            text: "litres"
+          },
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Bunkered fuel (where handling fee only is charged)",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Enter number of litres"
+          },
+          suffix: {
+            text: "litres"
+          },
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "If bunkered fuel is sold, please provide name of bunkered cards accepted",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+
+        <h1 class="govuk-body-m"><a href="#">Add another bunkered card</a></h1>
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "What percentage of the total fuel sales (excluding bunkered fuel) is derived from customer credit accounts where no initial deposit is paid",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Please note that this does not refer to fuel sales paid by debit or credit cards"
+          },
+          suffix: {
+            text: "%"
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "What percentage of the total fuel sales (excluding bunkered fuel) is derived from low-milage fuel cards",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Please note that this does not refer to fuel sales paid by debit or credit cards"
+          },
+          suffix: {
+            text: "%"
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Please provide the name of the low-mileage fuel card accepted",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Name on the card"
+          },
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Handling fee",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

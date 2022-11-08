@@ -1,0 +1,174 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-m">About your lease or agreement (continued)</span>
+
+      <form class="form" action="/current-rent-fixed-6015" method="post">
+
+        <h1 class="govuk-heading-l">Does the rent payable</h1>
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "proprietor-manager",
+          name: "proprietor-manager",
+          fieldset: {
+            legend: {
+              text: "include proprietor's, manager's or staff living accomodation?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "include-other-property",
+          name: "include-other-property",
+          fieldset: {
+            legend: {
+              text: "include other property?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "relate-only-part-property",
+          name: "relate-only-part-property",
+          fieldset: {
+            legend: {
+              text: "relate to only part of the property?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "relate-only-land",
+          name: "relate-only-land",
+          fieldset: {
+            legend: {
+              text: "relate only to land (excluding buildings)?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "relate-shell",
+          name: "relate-shell",
+          fieldset: {
+            legend: {
+              text: "relate to a 'shell' unit (did you have to fit the property out yourself)?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukCharacterCount({
+          name: "with-hint",
+          id: "with-hint",
+          maxlength: 1000,
+          label: {
+            text: "Please give details if you answered yes to any of these questions",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "For example, the rent includes an upstairs flat, or also includes the premises next door"
+          }
+        }) }}
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

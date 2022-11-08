@@ -1,0 +1,176 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+	  <h1 class="govuk-heading-l">
+	        Declaration summary
+	      </h1>
+
+	  <p class="govuk-body">You can save your declaration and come back later. You have 30 days from the first time you save to complete this declaration or your information will be deleted. </p>
+
+	 <ol class="app-task-list">
+		 <li>
+	         <h2 class="app-task-list__section">
+	           1. About you
+	         </h2>
+			 	<ul class="app-task-list__items">
+					<li class="app-task-list__item">
+	             	   <span class="app-task-list__task-name">
+						   <a href="movement-details/containers-used" aria-describedby="movement-details-not-started">Provide your contact details</a></span>
+	             <span class="govuk-tag app-task-list__tag govuk-tag">Completed</span>
+	           		</li>
+
+	           	 	<li class="app-task-list__item">
+	             <span class="app-task-list__task-name">
+	               <a href="trader-details/is-holder-eori-known" aria-describedby="trader-details-not-started">Declare your relationship to the property</a>
+	             </span>
+	             <span class="govuk-tag app-task-list__tag govuk-tag">Completed</span>
+	           		</li>
+		   	 	</ul></li></ol>
+          
+
+		  	 <ol class="app-task-list">
+
+		  	       <li>
+		  	         <h2 class="app-task-list__section">
+		  	           2. About the property
+		  	         </h2>
+
+		  	         <ul class="app-task-list__items">
+
+		  	           <!-- Movement details -->
+
+          
+		  	           <li class="app-task-list__item">
+		  	             <span class="app-task-list__task-name">
+              
+		  	               <a href="movement-details/containers-used" aria-describedby="movement-details-not-started">Describe how the property is used</a>
+              
+		  	             </span>
+		  	             <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="movement-details-not-started">
+		  	               Not started
+		  	             </span>
+		  	           </li>
+
+	           <li class="app-task-list__item">
+	             <span class="app-task-list__task-name">
+	               <a href="consignments/consignments/country-of-dispatch" aria-describedby="trader-details-not-started">Provide details of your licence</a>
+	             </span>
+	             <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="trader-details-not-started">
+	               Not started
+	             </span>
+	           </li>
+
+
+	         </ul>
+	       </li>
+	     </ol>
+		 
+		 <ol class="app-task-list">
+			 <li>
+		         <h2 class="app-task-list__section">
+		           3. About your trading history
+		         </h2>
+				 	<ul class="app-task-list__items">
+						<li class="app-task-list__item">
+		             	   <span class="app-task-list__task-name">
+							   <a href="movement-details/containers-used" aria-describedby="movement-details-not-started">Provide your trading details</a></span>
+		             <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="goods-summary-not-started">
+		               In progress
+		             </span>
+		           		</li>
+
+		           	 	
+			   	 	</ul>
+				</li>
+			</ol>
+			
+   		 <ol class="app-task-list">
+   			 <li>
+   		         <h2 class="app-task-list__section">
+   		           4. About any franchises or lettings
+   		         </h2>
+   				 	<ul class="app-task-list__items">
+   						<li class="app-task-list__item">
+   		             	   <span class="app-task-list__task-name">
+   							   <a href="movement-details/containers-used" aria-describedby="movement-details-not-started">Declare any separate businesses</a></span>
+   		             <span class="govuk-tag app-task-list__tag govuk-tag">Completed</span>
+   		           		</li>
+      						<li class="app-task-list__item">
+      		             	   <span class="app-task-list__task-name">
+      							   <a href="movement-details/containers-used" aria-describedby="movement-details-not-started">Declare any lettings</a></span>
+			             <span class="govuk-tag app-task-list__tag govuk-tag--blue" id="goods-summary-not-started">
+			               In progress
+			             </span>
+      		           		</li>
+
+		           	 	
+   			   	 	</ul>
+   				</li>
+   			</ol>
+			
+      		 <ol class="app-task-list">
+      			 <li>
+      		         <h2 class="app-task-list__section">
+      		           5. About your lease or agreement
+      		         </h2>
+      				 	<ul class="app-task-list__items">
+      						<li class="app-task-list__item">
+      		             	   <span class="app-task-list__task-name">
+      							   <a href="movement-details/containers-used" aria-describedby="movement-details-not-started">Describe your tenure</a></span>
+      		             <span class="govuk-tag app-task-list__tag govuk-tag">Completed</span>
+      		           		</li>
+         						<li class="app-task-list__item">
+         		             	   <span class="app-task-list__task-name">
+         							   <a href="movement-details/containers-used" aria-describedby="movement-details-not-started">About your landlord</a></span>
+         		             <span class="govuk-tag app-task-list__tag govuk-tag">Completed</span>
+         		           		</li>
+            						<li class="app-task-list__item">
+            		             	   <span class="app-task-list__task-name">
+            							   <a href="movement-details/containers-used" aria-describedby="movement-details-not-started">Report any...</a></span>
+            		             <span class="govuk-tag app-task-list__tag govuk-tag">Completed</span>
+            		           		</li>
+               						<li class="app-task-list__item">
+               		             	   <span class="app-task-list__task-name">
+               							   <a href="movement-details/containers-used" aria-describedby="movement-details-not-started">About your rent</a></span>
+					             <span class="govuk-tag app-task-list__tag govuk-tag--grey" id="goods-summary-not-started">
+					               Cannot start yet
+					             </span>
+               		           		</li>
+                  						<li class="app-task-list__item">
+                  		             	   <span class="app-task-list__task-name">
+                  							   <a href="movement-details/containers-used" aria-describedby="movement-details-not-started">About costs and services</a></span>
+                  		             <span class="govuk-tag app-task-list__tag govuk-tag">Completed</span>
+                  		           		</li>
+	                  						<li class="app-task-list__item">
+	                  		             	   <span class="app-task-list__task-name">
+	                  							   <a href="movement-details/containers-used" aria-describedby="movement-details-not-started">When the lease started?</a></span>
+	                  		             <span class="govuk-tag app-task-list__tag govuk-tag">Completed</span>
+	                  		           		</li>
+		                  						<li class="app-task-list__item">
+		                  		             	   <span class="app-task-list__task-name">
+		                  							   <a href="movement-details/containers-used" aria-describedby="movement-details-not-started">Incentives</a></span>
+		                  		             <span class="govuk-tag app-task-list__tag govuk-tag">Completed</span>
+		                  		           		</li>
+
+		           	 	
+      			   	 	</ul>
+      				</li>
+      			</ol>
+		 
+		 
+    </div>
+  </div>
+
+{% endblock %}

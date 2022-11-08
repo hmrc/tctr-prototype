@@ -1,0 +1,252 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers before sending your declaration</h1>
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name of the current occupier
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['property-type'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/what-service">
+              Change
+              <span class="govuk-visually-hidden">please select a service</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Does the property have a website
+		
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['website-name-6015'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Your name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['full-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Property Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>747 GORING ROAD</p>
+            <p>GORING-BY-SEA</p>
+            <p>WORTHING</p>
+            <p>BN12 4AX</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Trading history</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            If you've been in the property for less than three years, when did you first take occupation?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['regularly-sell-alcohol'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/what-service">
+              Change
+              <span class="govuk-visually-hidden">please select a service</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When does the financial year end?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['premises-licence'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/what-service">
+              Change
+              <span class="govuk-visually-hidden">please select a service</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Turnover</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Trading period
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['annual-rent'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/what-service">
+              Change
+              <span class="govuk-visually-hidden">please select a service</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Accomodation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['vat'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Average occupancy rate
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['set-rent'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Food
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['set-rent'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Alcohol
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['set-rent'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Other receipts
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['set-rent'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+        Total sales revenue
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['set-rent'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+
+      <h2 class="govuk-heading-m">Now send your declaration form</h2>
+
+      {{ govukWarningText({
+        text: "You could be taken to court if you submit false information.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "knowledge",
+        name: "knowledge",
+        items: [
+          {
+            value: "best-knowledge",
+            text: "To the best of my knowledge, I believe that the information I have given is correct"
+          }
+        ]
+      }) }}
+
+      <form action="/application-complete-6015" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+                <p class="govuk-body-m"><a href="#">Save a copy of your answers</a> (Print or PDF Download)</p>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Accept and send
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

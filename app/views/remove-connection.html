@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Remove your connection to the property</h1>
+
+      <h1 class="govuk-body-m">We'll use these details if we need to contact you</h1>
+
+      <form class="form" action="/check-your-answers-remove" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Full name"
+          },
+          id: "full-name",
+          name: "full-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Email address"
+          },
+          id: "email-address",
+          name: "email-address"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Phone number"
+          },
+          id: "phone-number",
+          name: "phone-number"
+        }) }}
+
+        {{ govukTextarea({
+          
+          label: {
+            text: "Additional Information"
+          },
+          hint: {
+            text: "For example, the name of the current owner or occupier"
+          },
+          name: "additional-information",
+          id: "additional-information"
+        }) }}
+		
+       
+
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+		     
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

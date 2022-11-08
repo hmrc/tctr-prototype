@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-m">About the services your landlord provides</span>
+      <br>
+
+      <form class="form" action="/rent-parking-spaces-6020" method="post">
+
+        <h1 class="govuk-heading-l">Give details of any services provided by the landlord and state whether the cost is recovered in the rent or paid separately in a management charge</h1>
+        <h1 class="govuk-body-m">For example, lighting, heating, cleaning of common parts</h1>
+
+        {{ govukInput({
+          label: {
+            text: "Enter details of service 1",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          id: "event-name",
+          name: "event-name"
+          }) }}
+
+          {{ govukRadios({
+              classes: "govuk-radios--inline",
+              idPrefix: "changed-name",
+              name: "changed-name",
+              fieldset: {
+                legend: {
+                  text: "",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "Included in rent",
+                  text: "Included in rent"
+                },
+                {
+                  value: "Separate payment",
+                  text: "Separate payment"
+                }
+              ]
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "What annual amount is included in the rent for services (excluding VAT)?"
+              },
+              prefix: {
+                text: "£"
+              },
+              classes: "govuk-input--width-10",
+              id: "event-name",
+              name: "event-name"
+            }) }}
+
+            <h1 class="govuk-body-m"><a href="#">Add another service</a></h1>
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

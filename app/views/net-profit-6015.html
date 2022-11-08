@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+		
+		<h1 class="govuk-caption-m">Your trading history</h1>
+
+      <form class="form" action="/sub-lettings-6015" method="post">
+
+        <h1 class="govuk-heading-l">Net Profits</h1>
+
+        <style>
+          .row {
+            display: flex;
+          }
+
+          .form-grp {
+            margin: 10px;
+          }
+          .form-grp label {
+            display:block;
+          }
+
+          </style>
+
+          <table>
+            <tr>
+              <th><h1 class="govuk-heading-s" style="text-align: left">Financial year end</h1></th>
+              <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2019</h1></th>
+              <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2010</h1></th>
+              <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2021</h1></th>
+            </tr>
+            <hr>
+
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Total net profit</h1>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="net1"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "net1",
+                    name: "net1"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                <label for="net2"></label>
+                {{ govukInput({
+                  label: {
+                    text: ""
+                  },
+                  prefix: {
+                    text: "£"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "net2",
+                  name: "net2"
+                }) }}
+              </div>
+            </td>
+              <td>
+                <div class="form-grp">
+                  <label for="net3"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "net3",
+                    name: "net3"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Total net profit as percentage of total sales revenue</h1>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="percent1"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    suffix: {
+                      text: "%"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "percent1",
+                    name: "percent1"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                <label for="percent2"></label>
+                {{ govukInput({
+                  label: {
+                    text: ""
+                  },
+                  suffix: {
+                    text: "%"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "percent2",
+                  name: "percent2"
+                }) }}
+              </div>
+            </td>
+              <td>
+                <div class="form-grp">
+                  <label for="percent3"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    suffix: {
+                      text: "%"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "percent3",
+                    name: "percent3"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+          </table>
+
+        {{ govukCharacterCount({
+          name: "usah",
+          id: "usah",
+          maxlength: 1000,
+          label: {
+            text: "USAH (Uniform System of Accounts for Hotels)",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "If USAH has been modified, not adopted or you wish to clarify any accounting policy; any annual figures include abnormally high/low revenues or expenditure; or there are any relevant matters describe below"
+          }
+        }) }}
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

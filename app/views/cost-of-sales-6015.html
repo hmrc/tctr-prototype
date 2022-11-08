@@ -1,0 +1,335 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <span class="govuk-caption-m">About your trading history</span>
+      <br>
+
+      <form class="form" action="/cost-of-sales-gross-total-6015" method="post">
+
+        <h1 class="govuk-heading-m">Cost of sales</h1>
+		
+		<h1 class="govuk-body-m">By giving a breakdown of your departmental cost of sales, you'll only have to include your total gross profits on the next screen.</h1>
+
+        <style>
+          .row {
+            display: flex;
+          }
+
+          .form-grp {
+            margin: 10px
+          }
+          .form-grp label {
+            display:block;
+          }
+          </style>
+
+          <table>
+            <tr>
+              <th><h1 class="govuk-heading-s" style="text-align: left">Financial year end</h1></th>
+              <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2019</h1></th>
+              <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2010</h1></th>
+              <th><h1 class="govuk-heading-s">{{ data['accounts-day'] }}/{{ data['accounts-month'] }}/2021</h1></th>
+            </tr>
+            <hr>
+
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Accomodation</h1>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="accom1"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "accom1-cost",
+                    name: "accom1-cost"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                <label for="accom2"></label>
+                {{ govukInput({
+                  label: {
+                    text: ""
+                  },
+                  prefix: {
+                    text: "£"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "accom2-cost",
+                  name: "accom2-cost"
+                }) }}
+              </div>
+            </td>
+              <td>
+                <div class="form-grp">
+                  <label for="accom3"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "accom3-cost",
+                    name: "accom3-cost"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Food</h1>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="food1"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "food1-cost",
+                    name: "food1-cost"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                <label for="food2"></label>
+                {{ govukInput({
+                  label: {
+                    text: ""
+                  },
+                  prefix: {
+                    text: "£"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "food2-cost",
+                  name: "food2-cost"
+                }) }}
+              </div>
+            </td>
+              <td>
+                <div class="form-grp">
+                  <label for="food3"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "food3-cost",
+                    name: "food3-cost"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Alcohol</h1>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="alco1"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "alco1-cost",
+                    name: "alco1-cost"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                <label for="alco2"></label>
+                {{ govukInput({
+                  label: {
+                    text: ""
+                  },
+                  prefix: {
+                    text: "£"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "alco2-cost",
+                  name: "alco2-cost"
+                }) }}
+              </div>
+            </td>
+              <td>
+                <div class="form-grp">
+                  <label for="alco3"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "alco3-cost",
+                    name: "alco3-cost"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Other receipts<p>(Including hire of function rooms, conference rooms, and telephones)</p></h1>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="other1"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "other1-cost",
+                    name: "other1-cost"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                <label for="other2"></label>
+                {{ govukInput({
+                  label: {
+                    text: ""
+                  },
+                  prefix: {
+                    text: "£"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "other2-cost",
+                  name: "other2-cost"
+                }) }}
+              </div>
+            </td>
+              <td>
+                <div class="form-grp">
+                  <label for="other3"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "other3-cost",
+                    name: "other3-cost"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h1 class="govuk-heading-s">Total cost of sales</h1>
+              </td>
+              <td>
+                <div class="form-grp">
+                  <label for="total1"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "total1-cost",
+                    name: "total1-cost"
+                  }) }}
+                </div>
+              </td>
+              <td>
+                <div class="form-grp">
+                <label for="total2"></label>
+                {{ govukInput({
+                  label: {
+                    text: ""
+                  },
+                  prefix: {
+                    text: "£"
+                  },
+                  classes: "govuk-input--width-10",
+                  id: "total2-cost",
+                  name: "total2-cost"
+                }) }}
+              </div>
+            </td>
+              <td>
+                <div class="form-grp">
+                  <label for="total3"></label>
+                  {{ govukInput({
+                    label: {
+                      text: ""
+                    },
+                    prefix: {
+                      text: "£"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "total3-cost",
+                    name: "total3-cost"
+                  }) }}
+                </div>
+              </td>
+            </tr>
+          </table>
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

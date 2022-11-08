@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-m">About your lease or agreement (continued)</span>
+      <br>
+
+      <form class="form" action="/former-lease-agreement" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "At what intervals is the rent reviewed under the terms of the lease/agreement?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+             text: "Other than indexation to the variations in rates or services"
+           },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukDateInput({
+          id: "next-review",
+          namePrefix: "next-review",
+          fieldset: {
+            legend: {
+              text: "When is the next rent review due?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Whether or not it was granted to the present occupier"
+          }
+        }) }}
+
+
+
+      <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

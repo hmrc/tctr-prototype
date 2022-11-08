@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Throughput and tunover </h1>
+
+      <h1 class="govuk-heading-l">Additional information</h1>
+
+      <form class="form" action="/throughput-and-turnover-promotion-price-6020" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "What were your opening hours (based oon the average daily staffed hours) during the periods of your quoted throughputs?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "If any of the quoted throughputs represent partial years, or were affected by closure, redevelopment or refurbishment, or local competition, please give details",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Leave blank if not applicable"
+          }
+        }) }}
+
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "Any other information you consider relevant",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "For example, terms of agreement with fuel suppliers, margins, local competition"
+          }
+        }) }}
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

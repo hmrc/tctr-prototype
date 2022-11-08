@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers </h1>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Number of weeks
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['number-weeks'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/what-service">
+              Change
+              <span class="govuk-visually-hidden">please select a service</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Turnover (excluding VAT)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['turnover'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Intoxicating liquor
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['alcohol'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Food
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['food'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other receipts
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['other-receipts'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Accomodation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['accomodation'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Average occupancy rate
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['average-rate'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Are AWP gaming machines takings shared between occupier and landlord?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['awp-gaming-machine-table'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/your-details">
+              Change
+              <span class="govuk-visually-hidden"> your details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <form action="/table-test" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

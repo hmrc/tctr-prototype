@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">What is your reference number and postcode?</h1>
+
+      <p>You'll find your reference number and postcode in the letter from the Valuation Office Agency (VOA)</p>
+
+      <form class="form" action="/reference-password" method="post">
+
+
+        {{ govukInput({
+          label: {
+            text: "Reference number"
+          },
+          hint: {
+            text: "for example, 1000001/101"
+          },
+          classes: "govuk-input--width-20",
+          id: "reference-number",
+          name: "reference-number"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Postcode"
+          },
+          hint: {
+            text: "for example, AB12 3CD"
+          },
+          classes: "govuk-input--width-10",
+          id: "postcode-ref",
+          name: "postcode-ref"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

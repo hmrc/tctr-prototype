@@ -1,0 +1,101 @@
+  {% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Trading details</h1>
+
+
+      <h1 class="govuk-heading-m">Enter trading receipts for the financial year: April 2019 to March 2020</h1>
+
+
+
+      <form class="form" action="/trading-details-years-three-page-two-6030" method="post">
+
+        {{ govukInput({
+          id: "turnover-year",
+          name: "turnover-year",
+          label: {
+            text: "Number of weeks",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          suffix: {
+            text: "weeks"
+          },
+          hint: {
+            text: "If the accounts do not relate to a whole year, or if you were not trading continuously, state the relevant number of weeks"
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          id: "cost",
+          name: "cost",
+          label: {
+            text: "Gross receipts",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          prefix: {
+            text: "£"
+          },
+          hint: {
+            text: "Excluding VAT and any payments received for concessions, franchises, licences or lettings"
+          },
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Total visitor numbers",
+            classes: "govuk-label--m"
+            },
+          classes: "govuk-input--width-10",
+          id: "average-rate",
+          name: "average-rate",
+          spellcheck: false
+        }) }}
+
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "Give details of any relevant factors, including circumstances influencing receipts or visitor numbers"
+          }
+        }) }}
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

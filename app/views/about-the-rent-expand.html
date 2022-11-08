@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">About the property</h1>
+
+      <h1 class="govuk-body-m">These should be the details of the person completing this.<p>We will only use your contact details to update you about your enquiry.</h1>
+
+      <form class="form" action="/trading-details" method="post">
+
+        {{ govukDateInput({
+          id: "passport-issued",
+          namePrefix: "passport-issued",
+          fieldset: {
+            legend: {
+              text: "When does it expire, or if earlier, what is the date of your next review (excluding indexation)?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          }
+        }) }}
+
+        {{ govukInput({
+          id: "annual-rent",
+          name: "annual-rent",
+          label: {
+            text: "What is the current annual rent?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "include-vat",
+          name: "include-vat",
+          fieldset: {
+            legend: {
+              text: "Does this sum include VAT?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukDateInput({
+            id: "first-paid-tenancy",
+            namePrefix: "first-paid-tenancy",
+            fieldset: {
+              legend: {
+                text: "When was the current rent first paid for this tenancy?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2007"
+            }
+          }) }}
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

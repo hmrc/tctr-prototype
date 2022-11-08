@@ -1,0 +1,194 @@
+    {% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Trading details </h1>
+
+      <form class="form" action="/trading-details-two-6030" method="post">
+
+        {{ govukTextarea({
+          label: {
+            text: "Description",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Use",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Name of occupier",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        <h1 class="govuk-heading-m">Year 1</h1>
+        <br>
+
+        {{ govukDateInput({
+          id: "passport-issued",
+          namePrefix: "passport-issued",
+          fieldset: {
+            legend: {
+              text: "Accounting year ending",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          }
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Weeks",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          classes: "govuk-!-width-one-quarter",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Income received",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-!-width-one-quarter",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        <h1 class="govuk-heading-m">Year 2</h1>
+        <br>
+
+        {{ govukDateInput({
+          id: "passport-issued",
+          namePrefix: "passport-issued",
+          fieldset: {
+            legend: {
+              text: "Accounting year ending",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          }
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Weeks",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          classes: "govuk-!-width-one-quarter",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Income received",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-!-width-one-quarter",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        <h1 class="govuk-heading-m">Year 3</h1>
+        <br>
+
+        {{ govukDateInput({
+          id: "passport-issued",
+          namePrefix: "passport-issued",
+          fieldset: {
+            legend: {
+              text: "Accounting year ending",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          }
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Weeks",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          classes: "govuk-!-width-one-quarter",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Income received",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-!-width-one-quarter",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        <h1 class="govuk-body-m"><a href="#">Add another concession</a></h1>
+
+
+        <p class="govuk-body" style="clear:both;">
+  
+
+		      <button value="continue_button" type="submit" name="continue_button" class="govuk-button" data-module="govuk-button" id="continue" novalidate="novalidate" style="margin-right:4px;">
+		        Save and continue
+          
+		      </button>
+  
+		      <button value="save_button" type="submit" name="save_button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="continue" novalidate="novalidate">
+		        Save as draft
+          
+		      </button>
+    
+  
+		</p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
